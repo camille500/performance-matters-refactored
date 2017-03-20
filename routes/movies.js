@@ -5,32 +5,18 @@ const request = require('request');
 const URL = process.env.MOVIE_BASE_URL;
 const KEY = process.env.MOVIE_API_KEY;
 
-router.get('/trending', function(req, res) {
-  request(`${URL}/movie/popular?${KEY}`, function (error, response, body) {
-  res.locals.data = cleanData(JSON.parse(body));
-  res.render('movies/index')
+router.get('/:page', function(req, res) {
+  const PAGE = req.params.page;
+  request(`${URL}/movie/${PAGE}?${KEY}`, function (error, response, body) {
+    res.locals.data = cleanData(JSON.parse(body));
+    res.render('movies/list');
   });
 });
 
-router.get('/toplist', function(req, res) {
-  request(`${URL}/movie/top_rated?${KEY}`, function (error, response, body) {
-  res.locals.data = cleanData(JSON.parse(body));
-  res.render('movies/index')
-  });
-});
-
-router.get('/latest', function(req, res) {
-  request(`${URL}/movie/now_playing?${KEY}`, function (error, response, body) {
-  res.locals.data = cleanData(JSON.parse(body));
-  res.render('movies/index')
-  });
-});
-
-router.get('/upcoming', function(req, res) {
-  request(`${URL}/movie/upcoming?${KEY}`, function (error, response, body) {
-  res.locals.data = cleanData(JSON.parse(body));
-  res.render('movies/index')
-  });
+router.get('/detail/:id', function(req, res) {
+  const ID = req.params.id;
+  console.log(ID);
+  res.render('movies/detail')
 });
 
 const cleanData = (data) => {
