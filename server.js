@@ -6,7 +6,7 @@ const request = require('request');
 
 const app = express();
 
-require('dotenv').config(); // process.env.MOVIE_API_KEY
+require('dotenv').config(); 
 
 /* LOAD ALL ROUTERS
 ----------------------------------------- */

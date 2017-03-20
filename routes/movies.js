@@ -2,11 +2,42 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 
-router.get('/', function(req, res) {
-  request('https://api.themoviedb.org/3/movie/popular?api_key=76244b12adc0042d55a0f0f57905f0be', function (error, response, body) {
-  console.log('body:', body); // Print the HTML for the Google homepage.
+const URL = process.env.MOVIE_BASE_URL;
+const KEY = process.env.MOVIE_API_KEY;
+
+router.get('/trending', function(req, res) {
+  request(`${URL}/movie/popular?${KEY}`, function (error, response, body) {
+  res.locals.data = cleanData(JSON.parse(body));
   res.render('movies/index')
   });
 });
+
+router.get('/toplist', function(req, res) {
+  request(`${URL}/movie/top_rated?${KEY}`, function (error, response, body) {
+  res.locals.data = cleanData(JSON.parse(body));
+  res.render('movies/index')
+  });
+});
+
+router.get('/latest', function(req, res) {
+  request(`${URL}/movie/now_playing?${KEY}`, function (error, response, body) {
+  res.locals.data = cleanData(JSON.parse(body));
+  res.render('movies/index')
+  });
+});
+
+router.get('/upcoming', function(req, res) {
+  request(`${URL}/movie/upcoming?${KEY}`, function (error, response, body) {
+  res.locals.data = cleanData(JSON.parse(body));
+  res.render('movies/index')
+  });
+});
+
+const cleanData = (data) => {
+  data.results.map(function(movie) {
+    movie.backdrop_path = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+  });
+  return data;
+}
 
 module.exports = router;

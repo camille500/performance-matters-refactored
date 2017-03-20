@@ -8,8 +8,8 @@
     <title>MovieSpot</title>
 
     <!-- Stylesheets -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/movie_style.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css" /> -->
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Lato:700,900" rel="stylesheet">
@@ -17,3 +17,23 @@
 </head>
 
 <body>
+
+  <header>
+        <nav>
+            <h1>Moviespot</h1>
+            <ul>
+                <li><a id="trending" href="../movies/trending">Trending movies</a></li>
+                <li><a id="toplist" href="../movies/toplist">Top rated movies</a></li>
+                <li><a id="latest" href="../movies/latest">Latest movies</a></li>
+                <li><a id="upcoming" href="../movies/upcoming">Upcoming movies</a></li>
+                <li><a id="random" href="#random">Random movie</a></li>
+                <!-- <li><a id="open_search"><img class="search_icon" src="./assets/images/search.svg" /></a></li> -->
+            </ul>
+        </nav>
+
+        <div class="search_block hidden">
+            <input type="text" id="search_query" />
+            <button role="button" type="submit" class="filter-btn" id="search_button">Search</button>
+        </div>
+
+    </header>

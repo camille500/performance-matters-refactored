@@ -1,5 +1,25 @@
 <%- include('../partials/head.ejs') %>
 
-  <h2>Movies</h2>
+<div class="movie_list">
+
+  <% for(var i = 0;i < data.results.length; i++) { %>
+
+          <article>
+              <h1 class="title"><%=data.results[i].title%></h1>
+              <figure>
+                  <img src="<%=data.results[i].backdrop_path%>">
+                  <span class="vote_average"><%=data.results[i].vote_average%></span>
+                  <figcaption>
+                      <p class="overview"><%=data.results[i].overview%></p>
+                      <footer>
+                          <time class="release_date"><%=data.results[i].release_date%></time> <a href="" class="title_url">Official Website</a>
+                      </footer>
+                  </figcaption>
+              </figure>
+          </article>
+
+  <% } %>
+
+</div>
 
 <%- include('../partials/foot.ejs') %>
