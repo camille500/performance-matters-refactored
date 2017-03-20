@@ -3,10 +3,12 @@
 const express = require('express');
 const path = require('path');
 const request = require('request');
+const compression = require('compression')
 
 const app = express();
 
-require('dotenv').config(); 
+require('dotenv').config();
+app.use(compression())
 
 /* LOAD ALL ROUTERS
 ----------------------------------------- */
