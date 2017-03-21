@@ -9,9 +9,11 @@
                   <p class="runtime"><%= data.runtime %></p>
                   <p class="release_date"><%= data.release_date %></p>
                   <ul class="genres">
-                      <a class="genre_id">
-                          <li class="name"></li>
+                    <% for(var i = 0;i < data.genres.length; i++) { %>
+                      <a href="<%=data.genres[i].id%>" class="genre_id">
+                          <li class="name"><%=data.genres[i].name%></li>
                       </a>
+                    <% } %>
                   </ul>
                   <p class="overview"></p>
                   <table>
