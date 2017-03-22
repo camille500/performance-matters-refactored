@@ -1,4 +1,4 @@
-/* LOAD ALL MODULES
+/* LOAD ALL DEPENDENCIES
 ----------------------------------------- */
 const express = require('express');
 const path = require('path');
