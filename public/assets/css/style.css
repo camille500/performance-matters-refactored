@@ -170,7 +170,7 @@ header li ul a {
     }
 }
 
-main > h1 {
+h1.titleHead {
     padding: .4em;
     margin: 1.25em .75em;
     background-color: #d73446;
