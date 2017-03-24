@@ -27,7 +27,7 @@ app.use('/movies', moviesRouter);
 /* INDEX PAGE
 ----------------------------------------- */
 app.get('/', function(req, res) {
-  // console.log()
+  res.redirect('/movies')
 });
 
 /* 404 PAGE
