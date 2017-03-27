@@ -30,6 +30,10 @@ app.get('/', function(req, res) {
   res.redirect('/movies/lists/popular')
 });
 
+app.get('/offline', function(req, res) {
+  res.redirect('/index.ejs')
+});
+
 /* 404 PAGE
 ----------------------------------------- */
 app.enable('verbose errors');
