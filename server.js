@@ -40,5 +40,5 @@ app.use(function(req, res, next) {
 /* START THE NPM SERVER
 ----------------------------------------- */
 app.listen(3000, function() {
-    console.log('De server is opgestart');
+    console.log('Server started on port 3000');
 });

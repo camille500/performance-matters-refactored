@@ -4,9 +4,10 @@
   "description": "Refactoring of the application made during the webapp from scratch course",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon build.js",
+    "start": "node server.js",
     "expose": "ngrok http 3000",
-    "test": "browserify server.js -o build.js && npm start"
+    "test": "browserify server.js -o build.js && npm start",
+    "testDev": "nodemon server.js"
   },
   "author": "Camille Sébastien Niessen",
   "license": "ISC",
