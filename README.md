@@ -21,4 +21,4 @@ $ git clone https://github.com/camille500/performance-matters-refactored.git
 1. Make sure that port `3000` is free to use.
 2. Type ```$ npm start``` in your terminal in the folder where you just installed all packages.
 3. Wait till you see the ```Server started on port 3000``` logged in the terminal.
-4. [Open the application](localhost:3000/)
+4. [Open the application](http://localhost:3000/)
