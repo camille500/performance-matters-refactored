@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "expose": "ngrok http 3000",
-    "test": "browserify server.js -o build.js && npm start",
+    "test": "browserify public/assets/js/scripts.js -o public/assets/js/build.js",
     "testDev": "nodemon server.js"
   },
   "author": "Camille Sébastien Niessen",
