@@ -4,7 +4,7 @@
   "description": "Refactoring of the application made during the webapp from scratch course",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "rm -rf storage/ && node server.js",
     "expose": "ngrok http 3000",
     "test": "browserify public/assets/js/scripts.js -o public/assets/js/build.js",
     "testDev": "nodemon server.js"
@@ -18,8 +18,10 @@
     "dotenv": "^4.0.0",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "path": "^0.12.7",
     "ngrok": "2.2.6",
+    "node-localStorage": "0.0.1",
+    "node-localstorage": "^1.3.0",
+    "path": "^0.12.7",
     "random-number-in-range": "^1.0.0",
     "request": "^2.81.0"
   },
