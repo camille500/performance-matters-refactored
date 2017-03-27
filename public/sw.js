@@ -1,9 +1,9 @@
 /* CONFIGURATION
 -------------------------------------------------------------- */
 const config = {
-  CORE_CACHE_NAME: 'moviespot-v1.0.0-core',
-  PAGE_CACHE_NAME: 'moviespot-v1.0.0-pages',
-  CORE_FILES: ['/assets/css/style.css', '/assets/css/movie_style.css']
+  CORE_CACHE_NAME: 'moviespot-v1.0.0-core', // Name of cache with all core files
+  PAGE_CACHE_NAME: 'moviespot-v1.0.0-pages', // Name of cache with all catched pages
+  CORE_FILES: ['/assets/css/style.css', '/assets/css/movie_style.css'] // Core files to cache
 }
 
 /* CACHE CORE SITE ASSETS
@@ -30,9 +30,11 @@ this.addEventListener('fetch', event => {
   }
 });
 
+/* HANDLE THE CORE FILES ON ERROR [OFFLINE]
+-------------------------------------------------------------- */
 const fetchCoreFile = (URL) => {
   return caches.open(config.CORE_CACHE_NAME)
-    .then(cache => cache.match(URL))
+    .then(cache => cache.match(URL)) // Check if requested core file is cached
     .then(response => response ? response : Promise.reject());
 }
 
@@ -40,7 +42,7 @@ const fetchCoreFile = (URL) => {
 -------------------------------------------------------------- */
 const getCachedPage = (request) => {
   return caches.open(config.PAGE_CACHE_NAME)
-    .then(cache => cache.match(request))
+    .then(cache => cache.match(request)) // Check if requested page is cached
     .then(response => response ? response : Promise.reject());
 }
 
