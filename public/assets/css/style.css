@@ -264,7 +264,10 @@ article footer > a:after {
     content: "";
 }
 .movie_list img {
+    min-height: 12.5em;
+    min-width: 100%;
     max-width: 100%;
+    background-color: #c5c8cc;
 }
 .movie_list h1 {
     padding: .75em;
