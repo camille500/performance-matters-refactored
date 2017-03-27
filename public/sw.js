@@ -3,7 +3,9 @@
 const config = {
   CORE_CACHE_NAME: 'moviespot-v1.0.0-core', // Name of cache with all core files
   PAGE_CACHE_NAME: 'moviespot-v1.0.0-pages', // Name of cache with all catched pages
-  CORE_FILES: ['/assets/css/style.css', '/assets/css/movie_style.css'] // Core files to cache
+  CORE_FILES: ['/assets/css/style.min.css',
+               '/assets/fonts/opensans-bold.woff',
+               '/assets/fonts/opensans-regular.woff'] // Core files to cache
 }
 
 /* CACHE CORE SITE ASSETS

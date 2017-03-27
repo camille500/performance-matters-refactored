@@ -8,5 +8,5 @@ g=n.a.offsetWidth,h=p.a.offsetWidth,u();q=setTimeout(I,50)}}var e=new r(k),n=new
 z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"undefined"!==typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
 var font = new FontFaceObserver('Open Sans');
 font.load().then(function () {
-  document.documentElement.className += ' fonts-loaded';
+  document.documentElement.className += 'fonts-loaded';
 });
