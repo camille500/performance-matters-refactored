@@ -4,7 +4,8 @@
   "description": "Refactoring of the application made during the webapp from scratch course",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "expose": "ngrok http 3000"
   },
   "author": "Camille Sébastien Niessen",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "path": "^0.12.7",
+    "ngrok": "2.2.6",
     "random-number-in-range": "^1.0.0",
     "request": "^2.81.0"
   },
