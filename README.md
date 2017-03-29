@@ -1,6 +1,6 @@
 # Moviespot - Server-side edition
 
-This is the documentation belonging to the server-side edition of the SPA i've made for Web app from scratch. 
+This is the documentation belonging to the server-side edition of the SPA i've made for Web app from scratch.
 
 ## Live server-side version
 
@@ -32,6 +32,48 @@ $ git clone https://github.com/camille500/performance-matters-refactored.git
 1. Open a new tab in your terminal after starting up the server.
 2. Type ```$ npm expose``` to expose the application to the web.
 3. Copy the url starting with `https://` to open the application.
+
+## Audits
+
+I've done multiple audits to see the effects of the performance on the application. Here are the screenshots with explanations of what i've changed. All is tested without throttling.
+
+#### SPA
+
+These are the audits I've done on the SPA (not this edition, but the none server-side one).
+
+![Audit](/screenshots/1.png "Audit")
+![Audit](/screenshots/2.png "Audit")
+
+As you can see, the score isn't that high. The application wasn't usable when JavaScript was disabled and without images the app didn't look good. All that is now much better.
+
+#### Server-side without improved performance
+
+The next screenshots were made after refactoring the SPA to a server-side application.
+
+![Audit](/screenshots/3.png "Audit")
+![Audit](/screenshots/4.png "Audit")
+
+The Page Speed audit was already higher. The application is also working without JavaScript now. There is a lot to improve though. A load time of 4.94s is really high.
+
+#### Server-side with improved performance
+
+I've worked on the performance of the application. These are the steps i've taken:
+
+- Added GZIP compression
+- Enabled caching
+- Added a service worker so that the site works offline
+- Added node localStorage for storing API data, so that the server doesn't have to do a new call when opening a page for the second time
+- Fontfaceobserver to prevent FOIT
+- Minified CSS
+- Browserify with babelify for compiling and minifying the JS
+- Non blocking JS by adding the ```defer``` tag
+- Loading smaller images from the IMDB site
+
+The result was awesome, the site now loads in about .704 ms. In total like 7x faster than before. The website now also works offline (if cached), with JS disabled and without images.
+
+![Audit](/screenshots/5.png "Audit")
+![Audit](/screenshots/6.png "Audit")
+![Audit](/screenshots/7.png "Audit")
 
 ## About MovieSpot
 MovieSpot is a Single Page movie database. It's possible to check out the latest-, upcoming-, top rated-, trending movies & much more. Want more movies like youre favorite movie? Just search for the movie & see what movies are similar to that one.
