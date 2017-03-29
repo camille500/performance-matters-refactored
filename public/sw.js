@@ -1,3 +1,5 @@
+// Source: https://github.com/jbmoelker/workshop-cmd-pwa
+
 /* CONFIGURATION
 -------------------------------------------------------------- */
 const config = {
