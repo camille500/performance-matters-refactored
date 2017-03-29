@@ -11,7 +11,8 @@ require('dotenv').config();
 
 /* SET PORT FOR HEROKU
 ----------------------------------------- */
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
+const host = process.env.HOST ||'0.0.0.0';
 
 /* ENABLE CACHE AND COMPRESSION
 ----------------------------------------- */
@@ -47,6 +48,6 @@ app.use(function(req, res, next) {
 
 /* START THE NPM SERVER
 ----------------------------------------- */
-app.listen(port, function() {
+app.listen(port, host, function() {
     console.log('Server started on port 3000');
 });
