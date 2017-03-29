@@ -8,9 +8,15 @@ const compression = require('compression')
 const app = express();
 
 require('dotenv').config();
-app.use(compression())
 
+/* SET PORT FOR HEROKU
+----------------------------------------- */
 var port = process.env.PORT || 3000;
+
+/* ENABLE CACHE AND COMPRESSION
+----------------------------------------- */
+app.set('view cache', true);
+app.use(compression());
 
 /* LOAD ALL ROUTERS
 ----------------------------------------- */

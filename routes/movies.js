@@ -6,8 +6,11 @@ const request = require('request');
 const currencyFormatter = require('currency-formatter');
 const randomNumber = require('random-number-in-range');
 const LocalStorage = require('node-localstorage').LocalStorage;
-listStorage = new LocalStorage('./storage/lists');
-detailStorage = new LocalStorage('./storage/details');
+
+/* CREATE LOCALSTORAGE LOCATIONS
+----------------------------------------- */
+const listStorage = new LocalStorage('./storage/lists');
+const detailStorage = new LocalStorage('./storage/details');
 
 /* GET DATA FROM .EVN FILE
 ----------------------------------------- */
@@ -71,7 +74,9 @@ router.get('/special/random', function(req, res) {
 const clean = {
   lists(data) {
     data.results.map(function(movie) {
+      movie.imageID = movie.backdrop_path;
       movie.backdrop_path = `https://image.tmdb.org/t/p/w300${movie.backdrop_path}`
+      compressImages(movie.backdrop_path, movie.imageID);
     });
     return data;
   },
