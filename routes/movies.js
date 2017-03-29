@@ -20,7 +20,6 @@ const detailStorage = new LocalStorage('./storage/details');
 const URL = process.env.MOVIE_API_KEY;
 const KEY = process.env.MOVIE_BASE_URL;
 
-console.log(TEST1, TEST2);
 
 /* ROUTE FOR LISTS
 ----------------------------------------- */
