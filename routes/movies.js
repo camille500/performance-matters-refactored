@@ -19,6 +19,8 @@ const detailStorage = new LocalStorage('./storage/details');
 const LINK = process.env.MOVIE_API_KEY;
 const KEY = process.env.MOVIE_BASE_URL;
 
+console.log(LINK);
+console.log(KEY);
 
 /* ROUTE FOR LISTS
 ----------------------------------------- */
