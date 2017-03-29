@@ -3,11 +3,9 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
-const aws = require('aws-sdk');
 const currencyFormatter = require('currency-formatter');
 const randomNumber = require('random-number-in-range');
 const LocalStorage = require('node-localstorage').LocalStorage;
-require('dotenv').config();
 
 /* CREATE LOCALSTORAGE LOCATIONS
 ----------------------------------------- */
@@ -16,18 +14,15 @@ const detailStorage = new LocalStorage('./storage/details');
 
 /* GET DATA FROM .EVN FILE
 ----------------------------------------- */
-const LINK = process.env.MOVIE_API_KEY;
-const KEY = process.env.MOVIE_BASE_URL;
-
-console.log(LINK);
-console.log(KEY);
+const URL = 'https://api.themoviedb.org/3'
+const KEY = 'api_key=76244b12adc0042d55a0f0f57905f0be'
 
 /* ROUTE FOR LISTS
 ----------------------------------------- */
 router.get('/lists/:page', function(req, res) {
   const PAGE = req.params.page;
   if(!listStorage.getItem(PAGE)) {
-    request(`${LINK}/movie/${PAGE}?${KEY}`, function (error, response, body) {
+    request(`${URL}/movie/${PAGE}?${KEY}`, function (error, response, body) {
       const data = clean.lists(JSON.parse(body));
       listStorage.setItem(PAGE, JSON.stringify(data));
       res.locals.data = data;
@@ -42,7 +37,7 @@ router.get('/lists/:page', function(req, res) {
 router.get('/lists/:id/similar', function(req, res) {
   const ID = req.params.id;
   if(!listStorage.getItem(ID)) {
-    request(`${LINK}/movie/${ID}/similar?${KEY}`, function (error, response, body) {
+    request(`${URL}/movie/${ID}/similar?${KEY}`, function (error, response, body) {
       const data = clean.lists(JSON.parse(body));
       listStorage.setItem(ID, JSON.stringify(data));
       res.locals.data = data;
@@ -58,7 +53,7 @@ router.get('/lists/:id/similar', function(req, res) {
 ----------------------------------------- */
 router.get('/detail/:id', function(req, res) {
   const ID = req.params.id;
-  request(`${LINK}/movie/${ID}?${KEY}`, function (error, response, body) {
+  request(`${URL}/movie/${ID}?${KEY}`, function (error, response, body) {
     res.locals.data = clean.detail(JSON.parse(body));
     res.render('movies/detail');
   });
@@ -68,7 +63,7 @@ router.get('/detail/:id', function(req, res) {
 ----------------------------------------- */
 router.get('/special/random', function(req, res) {
   const ID = randomNumber(1, 99999);
-  request(`${LINK}/movie/${ID}?${KEY}`, function (error, response, body) {
+  request(`${URL}/movie/${ID}?${KEY}`, function (error, response, body) {
     res.locals.data = clean.detail(JSON.parse(body));
     res.render('movies/detail');
   });
