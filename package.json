@@ -12,6 +12,7 @@
   "author": "Camille Sébastien Niessen",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.34.0",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "currency-formatter": "^1.1.1",
