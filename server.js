@@ -10,7 +10,7 @@ const app = express();
 require('dotenv').config();
 app.use(compression())
 
-var port = server.listen(process.env.PORT || 3000);
+var port = process.env.PORT || 3000;
 
 /* LOAD ALL ROUTERS
 ----------------------------------------- */
