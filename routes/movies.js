@@ -7,6 +7,7 @@ const aws = require('aws-sdk');
 const currencyFormatter = require('currency-formatter');
 const randomNumber = require('random-number-in-range');
 const LocalStorage = require('node-localstorage').LocalStorage;
+require('dotenv').config();
 
 /* CREATE LOCALSTORAGE LOCATIONS
 ----------------------------------------- */
