@@ -71,12 +71,12 @@ router.get('/special/random', function(req, res) {
 const clean = {
   lists(data) {
     data.results.map(function(movie) {
-      movie.backdrop_path = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+      movie.backdrop_path = `https://image.tmdb.org/t/p/w300${movie.backdrop_path}`
     });
     return data;
   },
   detail(movie) {
-    movie.poster_path = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    movie.poster_path = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
     movie.runtime = `${(movie.runtime / 60).toFixed()} uur`;
     movie.budget = currencyFormatter.format(movie.budget, { locale: 'nl-NL' });
     movie.revenue = currencyFormatter.format(movie.revenue, { locale: 'nl-NL' });

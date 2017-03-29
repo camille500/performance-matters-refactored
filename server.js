@@ -27,7 +27,7 @@ app.use('/movies', moviesRouter);
 /* INDEX PAGE
 ----------------------------------------- */
 app.get('/', function(req, res) {
-  res.redirect('/movies/lists/popular')
+  res.redirect('/movies/lists/popular');
 });
 
 /* 404 PAGE
