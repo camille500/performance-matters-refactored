@@ -16,8 +16,8 @@ const detailStorage = new LocalStorage('./storage/details');
 /* GET DATA FROM .EVN FILE
 ----------------------------------------- */
 let config = new aws.S3({
-  LINK: process.env.MOVIE_API_KEY;
-  KEY: process.env.MOVIE_BASE_URL;
+  LINK: process.env.MOVIE_API_KEY,
+  KEY: process.env.MOVIE_BASE_URL
 });
 
 /* ROUTE FOR LISTS
