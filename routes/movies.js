@@ -17,6 +17,11 @@ const detailStorage = new LocalStorage('./storage/details');
 const URL = 'https://api.themoviedb.org/3'
 const KEY = 'api_key=76244b12adc0042d55a0f0f57905f0be'
 
+const TEST1 = process.env.MOVIE_API_KEY;
+const TEST2 = process.env.MOVIE_BASE_URL;
+
+console.log(TEST1, TEST2);
+
 /* ROUTE FOR LISTS
 ----------------------------------------- */
 router.get('/lists/:page', function(req, res) {
