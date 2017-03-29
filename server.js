@@ -10,6 +10,8 @@ const app = express();
 require('dotenv').config();
 app.use(compression())
 
+var port = server.listen(process.env.PORT || 3000);
+
 /* LOAD ALL ROUTERS
 ----------------------------------------- */
 const moviesRouter = require('./routes/movies');
@@ -39,6 +41,6 @@ app.use(function(req, res, next) {
 
 /* START THE NPM SERVER
 ----------------------------------------- */
-app.listen(3000, function() {
+app.listen(port, function() {
     console.log('Server started on port 3000');
 });
