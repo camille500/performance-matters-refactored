@@ -76,7 +76,6 @@ const clean = {
     data.results.map(function(movie) {
       movie.imageID = movie.backdrop_path;
       movie.backdrop_path = `https://image.tmdb.org/t/p/w300${movie.backdrop_path}`
-      compressImages(movie.backdrop_path, movie.imageID);
     });
     return data;
   },

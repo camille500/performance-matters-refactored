@@ -15,7 +15,7 @@ var port = process.env.PORT || 3000;
 
 /* ENABLE CACHE AND COMPRESSION
 ----------------------------------------- */
-// app.set('view cache', true);
+app.set('view cache', true);
 app.use(compression());
 
 /* LOAD ALL ROUTERS
