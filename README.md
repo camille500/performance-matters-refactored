@@ -1,6 +1,11 @@
 # Moviespot - Server-side edition
 
-This is the documentation belonging to the server-side edition of my [Moviespot SPA](http://camille-sebastien.com/moviespot/)
+This is the documentation belonging to the server-side edition of the SPA i've made for Web app from scratch. 
+
+## Live server-side version
+
+I've deployed my server-side application on Heroku.
+[https://moviespot-pm.herokuapp.com/](https://moviespot-pm.herokuapp.com/)
 
 ## Installation
 
