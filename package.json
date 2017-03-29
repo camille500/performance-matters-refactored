@@ -4,7 +4,7 @@
   "description": "Refactoring of the application made during the webapp from scratch course",
   "main": "server.js",
   "scripts": {
-    "start": "mkdir storage && mkdir storage/lists/ && mkdir storage/details/ && node server.js",
+    "start": "node server.js",
     "expose": "ngrok http 3000",
     "test": "browserify public/assets/js/scripts.js -o public/assets/js/build.js",
     "testDev": "nodemon server.js"
