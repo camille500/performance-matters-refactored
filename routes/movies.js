@@ -23,7 +23,7 @@ const KEY = process.env.MOVIE_BASE_URL;
 router.get('/lists/:page', function(req, res) {
   const PAGE = req.params.page;
   if(!listStorage.getItem(PAGE)) {
-    request(`${URL}/movie/${PAGE}?${TEST1}`, function (error, response, body) {
+    request(`${URL}/movie/${PAGE}?${KEY}`, function (error, response, body) {
       const data = clean.lists(JSON.parse(body));
       listStorage.setItem(PAGE, JSON.stringify(data));
       res.locals.data = data;
