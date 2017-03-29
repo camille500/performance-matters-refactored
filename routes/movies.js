@@ -14,8 +14,8 @@ const detailStorage = new LocalStorage('./storage/details');
 
 /* GET DATA FROM .EVN FILE
 ----------------------------------------- */
-const URL = 'https://api.themoviedb.org/3'
-const KEY = process.env.MOVIE_BASE_URL;
+const KEY = process.env.MOVIE_API_KEY;
+const URL = process.env.MOVIE_BASE_URL;
 
 
 /* ROUTE FOR LISTS
