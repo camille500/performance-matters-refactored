@@ -12,7 +12,7 @@
   "icons": [
     {
       "src": "/assets/img/movie-icon.png",
-      "sizes": "50x50",
+      "sizes": "256x256",
       "type": "image/png"
     }
   ]
